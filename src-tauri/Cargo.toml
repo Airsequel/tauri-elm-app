@@ -1,0 +1,25 @@
+[package]
+name = "tauri-elm-app"
+version = "0.0.0"
+description = "A Tauri + Elm app"
+authors = ["you"]
+license = "ISC"
+repository = "https://github.com/Airsequel/tauri-elm-app"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+tauri = { version = "1.5", features = [
+  "shell-open",
+  # "devtools", # Uncomment to enable inspector
+] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[features]
+# This feature is used for production builds
+# or when `devPath` points to the filesystem
+# DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
