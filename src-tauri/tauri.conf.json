@@ -38,7 +38,7 @@
         "resizable": true,
         "title": "Tauri Elm App",
         "width": 600,
-        "height": 450
+        "height": 200
       }
     ]
   }

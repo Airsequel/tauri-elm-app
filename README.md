@@ -1,7 +1,10 @@
 # ![Icon](src-tauri/icons/32x32.png) Tauri Elm App
 
 Use [Tauri](https://tauri.app)
-to build desktop apps with [Elm](https://elm-lang.org/)!
+to build desktop apps with [Elm](https://elm-lang.org/)
+and [Tailwind CSS](https://tailwindcss.com/)!
+
+![Screenshot](screenshot.png)
 
 
 ## Local Development
