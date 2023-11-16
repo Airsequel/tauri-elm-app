@@ -3,6 +3,7 @@
 Use [Tauri](https://tauri.app)
 to build desktop apps with [Elm](https://elm-lang.org/)
 and [Tailwind CSS](https://tailwindcss.com/)!
+
 Uses [elm-watch](https://lydell.github.io/elm-watch/)
 for hot reloading and bundling.
 
@@ -24,3 +25,16 @@ make dev
 ```
 
 Check out the [Makefile](makefile) for all available commands.
+
+
+## Related
+
+- [@elm-land/tauri] - Template for using Elm Land
+    to build desktop apps with Tauri.
+- [ElmTauriGUI] - Connect to the file system via `lobanov/elm-taskport`.
+- [tauri-elm-counter] - Tauri + Elm based counter example
+    using Tauri's Rust backend.
+
+[@elm-land/tauri]: https://github.com/elm-land/tauri
+[ElmTauriGUI]: https://github.com/Andrew-Clow/ElmTauriGUI
+[tauri-elm-counter]: https://github.com/eaon/tauri-elm-counter
