@@ -3,38 +3,35 @@ help: makefile
 	@tail -n +4 makefile | grep ".PHONY"
 
 
+node_modules: package.json bun.lockb
+	bun install
+
+
 .PHONY: dev
-dev:
+dev: node_modules
 	bun x tauri dev
 
 
 .PHONY: dev-elm
 dev-elm:
-	bun x elm reactor
+	bun x elm-watch hot
 
 
-node_modules: package.json
-	bun install
-
-
-dist/index.html: src/Main.elm | node_modules
-	bun x elm make $< \
-		--optimize \
-		--output=$@
-
-
-src-tauri/target/release/bundle/macos/tauri-elm-app.app: node_modules src/Main.elm
-	bun x tauri build
+dist/main.js: src/Main.elm | node_modules
+	bun x elm-watch make --optimize
 
 
 .PHONY: build
-build: src-tauri/target/release/bundle/macos/tauri-elm-app.app
+# Prerequisites are built by Tauri
+build: node_modules
+	rm -rf dist/main.js
+	bun x tauri build
 
 
 
 .PHONY: clean
 clean:
-	rm -rf dist
+	rm -rf dist/main.js
 	rm -rf elm-stuff
-	rm -rf node_modules/
+	rm -rf node_modules
 	rm -rf src-tauri/target

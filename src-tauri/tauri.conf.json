@@ -1,8 +1,8 @@
 {
   "build": {
     "beforeDevCommand": "make dev-elm",
-    "beforeBuildCommand": "make dist/index.html",
-    "devPath": "http://localhost:8000/src/Main.elm",
+    "beforeBuildCommand": "make dist/main.js",
+    "devPath": "http://localhost:53023",
     "distDir": "../dist"
   },
   "package": {

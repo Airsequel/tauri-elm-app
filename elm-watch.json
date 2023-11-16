@@ -1,0 +1,12 @@
+{
+    "targets": {
+        "tauri-elm-app": {
+            "inputs": [
+                "src/Main.elm"
+            ],
+            "output": "dist/main.js"
+        }
+    },
+    "serve": "./dist",
+    "port": 53023
+}
