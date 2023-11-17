@@ -18,7 +18,10 @@ dev-elm:
 
 
 dist/main.js: src/Main.elm | node_modules
-	bun x elm-watch make --optimize
+	# Use bun if available
+	command -v bun >/dev/null \
+		&& bun x elm-watch make --optimize \
+		|| npx elm-watch make --optimize
 
 
 .PHONY: build
