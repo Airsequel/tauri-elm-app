@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-12, ubuntu-22.04, windows-2022]
+        platform: [macos-12, ubuntu-22.04]
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -25,7 +25,7 @@ jobs:
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
 
-      - name: install dependencies (ubuntu only)
+      - name: Install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-22.04'
         run: |
           sudo apt-get update
@@ -47,3 +47,45 @@ jobs:
           releaseDraft: true
           prerelease: false
           tauriScript: bun x tauri
+
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: app-v__VERSION__
+          releaseName: 'App v__VERSION__'
+          releaseBody: |
+            See the assets to download this version and install.
+          releaseDraft: true
+          prerelease: false
+          tauriScript: bun x tauri
+
+  publish-tauri-on-windows:
+    permissions:
+      contents: write
+
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install frontend dependencies
+        run: npm install
+
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: app-v__VERSION__
+          releaseName: 'App v__VERSION__'
+          releaseBody: |
+            See the assets to download this version and install.
+          releaseDraft: true
+          prerelease: false
