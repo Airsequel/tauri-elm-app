@@ -20,7 +20,7 @@ jobs:
       - name: Setup bun
         uses: oven-sh/setup-bun@v1
         with:
-          bun-version: 1.x
+          bun-version: "1.0"
 
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
