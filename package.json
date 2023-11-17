@@ -1,6 +1,6 @@
 {
   "name": "tauri-elm-app",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "devDependencies": {
     "@tauri-apps/cli": "^1.5.6",
     "elm": "^0.19.1-6",
