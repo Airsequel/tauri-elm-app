@@ -31,10 +31,12 @@ Check out the [Makefile](makefile) for all available commands.
 
 - [@elm-land/tauri] - Template for using Elm Land
     to build desktop apps with Tauri.
+- [Conduct] - Haskell package that provides an Elm like UI library for Tauri.
 - [ElmTauriGUI] - Connect to the file system via `lobanov/elm-taskport`.
 - [tauri-elm-counter] - Tauri + Elm based counter example
     using Tauri's Rust backend.
 
 [@elm-land/tauri]: https://github.com/elm-land/tauri
+[Conduct]: https://github.com/matthunz/conduct
 [ElmTauriGUI]: https://github.com/Andrew-Clow/ElmTauriGUI
 [tauri-elm-counter]: https://github.com/eaon/tauri-elm-counter
