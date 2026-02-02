@@ -7,6 +7,11 @@ node_modules: package.json bun.lockb
 	bun install
 
 
+.PHONY: format
+format:
+	elmfmt -i src
+
+
 .PHONY: dev
 dev: node_modules
 	bun x tauri dev
