@@ -2,33 +2,24 @@
   "build": {
     "beforeDevCommand": "make dev-elm",
     "beforeBuildCommand": "make dist/main.js",
-    "devPath": "http://localhost:53023",
-    "distDir": "../dist"
+    "devUrl": "http://localhost:53023",
+    "frontendDist": "../dist"
   },
-  "package": {
-    "productName": "tauri-elm-app",
-    "version": "0.1.0"
+  "productName": "tauri-elm-app",
+  "version": "0.1.0",
+  "identifier": "com.tauri-elm-app",
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
   },
-  "tauri": {
-    "allowlist": {
-      "all": false,
-      "shell": {
-        "all": false,
-        "open": true
-      }
-    },
-    "bundle": {
-      "active": true,
-      "targets": "all",
-      "identifier": "com.tauri-elm-app",
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ]
-    },
+  "app": {
     "security": {
       "csp": null
     },
